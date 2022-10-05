@@ -1,16 +1,15 @@
 require_relative "piece"
 
-
-class Rook < Piece
+class Bishop < Piece
     include Slideable
 
     def symbol
-        @color == black ? ♜ : ♖
+        @color == black ? ♝ : ♗
     end
 
     private
     def move_dirs
-        Slideable.HORIZONTAL_DIRS
+        Slideable.DIAGONAL_DIRS
     end
 
 end
