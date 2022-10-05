@@ -26,8 +26,10 @@ module Slideable
         all_moves_arr = []
         move_dirs.each do |dir| # test subclass call for move_dirs
             dx, dy = dir
+            grown = grow_unblocked_moved_in_dir(dx, dy)
+            all_moves_arr.concat(grown)
         end
-
+        all_moves_arr
     end
 
     private
@@ -40,16 +42,24 @@ module Slideable
         grown_moves = []
         x, y = pos
 
-        
-        #collision = false
-        #until collision
-        #next_pos = [x+=dx, y+=dy] 
-        # #case 1: out of bounds
-        # unless next_pos.all?(&:between?(0,7))
-        # return grown_moves
-        # end
-        #end
-        
+        while true
+            next_pos = [x+=dx, y+=dy] 
+            #case 1: out of bounds
+            unless next_pos.all? {|coord| coord.between?(0, 7) }
+                return grown_moves
+            end
+            #case 2: Encounter same color piece
+            if board[next_pos].color == color && !board[next_pos].empty?
+                return grown_moves
+            end
+            #case 3: Encounter different colot piece
+            if board[next_pos].color != color && !board[next_pos].empty?
+                return grown_moves.push(next_pos)
+            end
+            grown_moves.push(next_pos)
+        end
+
+        grown_moves
     end
 
 end
