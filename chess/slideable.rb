@@ -23,6 +23,10 @@ module Slideable
     end
 
     def moves
+        all_moves_arr = []
+        move_dirs.each do |dir| # test subclass call for move_dirs
+            
+        end
 
     end
 
@@ -33,7 +37,8 @@ module Slideable
     end
 
     def grow_unblocked_moves_in_dir(dx, dy)
-
+        grown_moves = []
+        @pos
     end
 
 end
