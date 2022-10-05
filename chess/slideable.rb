@@ -26,7 +26,7 @@ module Slideable
         all_moves_arr = []
         move_dirs.each do |dir| # test subclass call for move_dirs
             dx, dy = dir
-            grown = grow_unblocked_moved_in_dir(dx, dy)
+            grown = grow_unblocked_moves_in_dir(dx, dy)
             all_moves_arr.concat(grown)
         end
         all_moves_arr

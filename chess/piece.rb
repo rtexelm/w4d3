@@ -10,7 +10,7 @@ class Piece
     end
 
     def to_s
-        # "#{symbol}"
+        "#{symbol}"
     end
 
     def empty?
@@ -32,13 +32,4 @@ class Piece
     
 end
 
-# class NullPiece < Piece
 
-#     def intialize
-#         @type = "null"
-#     end
-
-# end
-
-piece = Piece.new("red", "r", "r")
-puts piece
