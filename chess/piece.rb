@@ -21,6 +21,10 @@ class Piece
         
     end
 
+    def inspect
+        symbol
+    end
+
     def symbol
         raise NotImplementedError
     end

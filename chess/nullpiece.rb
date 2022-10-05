@@ -6,7 +6,7 @@ class NullPiece < Piece
 
     def symbol
         # color == :black ? ♜ : ♖
-        'nullpiece'
+        '▢'
     end
 
     private
