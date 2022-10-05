@@ -4,12 +4,12 @@ class Piece
 
     def initialize(color, board, pos)
         @color = color #symbol
-        @board = board
-        @pos = pos
+        @board = board # New board instance
+        @pos = pos # Current pos array
     end
 
     def to_s
-        self.class.name
+        "#{symbol}"
     end
 
     def empty?
@@ -20,9 +20,9 @@ class Piece
         
     end
 
-    # def Symbol
-
-    # end
+    def symbol
+        raise NotImplementedError
+    end
 
     private
     def move_into_check?(end_pos)
