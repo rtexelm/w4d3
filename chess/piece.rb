@@ -1,10 +1,11 @@
 class Piece
     
-    attr_writer :pos
+    attr_accessor :pos
+    attr_reader :board, :color
 
     def initialize(color, board, pos)
         @color = color #symbol
-        @board = board # New board instance
+        @board = board # Current board instance
         @pos = pos # Current pos array
     end
 

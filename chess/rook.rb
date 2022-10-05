@@ -10,7 +10,7 @@ class Rook < Piece
 
     private
     def move_dirs
-        Slideable.HORIZONTAL_DIRS
+        horizontal_dirs
     end
 
 end

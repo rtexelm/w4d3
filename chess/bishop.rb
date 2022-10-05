@@ -9,7 +9,7 @@ class Bishop < Piece
 
     private
     def move_dirs
-        Slideable.DIAGONAL_DIRS
+        diagonal_dirs
     end
 
 end

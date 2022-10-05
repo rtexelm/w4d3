@@ -25,7 +25,7 @@ module Slideable
     def moves
         all_moves_arr = []
         move_dirs.each do |dir| # test subclass call for move_dirs
-            
+            dx, dy = dir
         end
 
     end
@@ -38,7 +38,18 @@ module Slideable
 
     def grow_unblocked_moves_in_dir(dx, dy)
         grown_moves = []
-        @pos
+        x, y = pos
+
+        
+        #collision = false
+        #until collision
+        #next_pos = [x+=dx, y+=dy] 
+        # #case 1: out of bounds
+        # unless next_pos.all?(&:between?(0,7))
+        # return grown_moves
+        # end
+        #end
+        
     end
 
 end
